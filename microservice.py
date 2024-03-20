@@ -4,12 +4,8 @@ import requests
 app = Flask(__name__)
 
 def get_prime():
-    response = requests.get('http://20.244.56.144/numbers/primes')
-    data = response.json()
-    print(data)  # print the response data for debugging
-    numbers = [int(i) for i in data if isinstance(i, int) or i.isdigit()]
-    return sum(numbers) / len(numbers) if numbers else None
-    #return response.json()
+    response = requests.get('http://20.244.56.144/numbers/primes')    
+    return response.json()
 
 def get_even():
     response = requests.get('http://20.244.56.144/numbers/even')
