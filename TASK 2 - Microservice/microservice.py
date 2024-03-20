@@ -5,6 +5,9 @@ app = Flask(__name__)
 
 def get_prime():
     response = requests.get('http://20.244.56.144/numbers/primes')  
+    #data = response.json()
+    #print(data) 
+    #numbers = [int(i) for i in data if isinstance(i, int) or i.isdigit()]
     return response.json()
 
 def get_even():
